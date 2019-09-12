@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/lubianat/node-europmc/issues"
   },
-  "homepage": "https://github.com/lubianat/node-europmc#readme"
+  "homepage": "https://github.com/lubianat/node-europmc#readme",
+  "dependencies": {
+    "random-number-generator": "^1.0.2"
+  }
 }
