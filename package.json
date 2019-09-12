@@ -1,0 +1,24 @@
+{
+  "name": "node-europmc",
+  "version": "0.0.1",
+  "description": "A package to query the EuropePMC API. ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lubianat/node-europmc.git"
+  },
+  "keywords": [
+    "EuropePMC",
+    "PubMed",
+    "papers"
+  ],
+  "author": "Tiago Lubiana",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lubianat/node-europmc/issues"
+  },
+  "homepage": "https://github.com/lubianat/node-europmc#readme"
+}
