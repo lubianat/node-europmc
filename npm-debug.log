@@ -1,0 +1,108 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/node', '/usr/bin/npm', 'publish' ]
+2 info using npm@3.5.2
+3 info using node@v8.10.0
+4 verbose publish [ '.' ]
+5 silly cache add args [ '.', null ]
+6 verbose cache add spec .
+7 silly cache add parsed spec Result {
+7 silly cache add   raw: '.',
+7 silly cache add   scope: null,
+7 silly cache add   name: null,
+7 silly cache add   rawSpec: '.',
+7 silly cache add   spec: '/home/lubianat/Documents/Projects/side/node-europepmc',
+7 silly cache add   type: 'directory' }
+8 verbose addLocalDirectory /home/lubianat/.npm/node-europmc/0.0.1/package.tgz not in flight; packing
+9 info lifecycle node-europmc@0.0.1~prepublish: node-europmc@0.0.1
+10 silly lifecycle node-europmc@0.0.1~prepublish: no script for prepublish, continuing
+11 verbose tar pack [ '/home/lubianat/.npm/node-europmc/0.0.1/package.tgz',
+11 verbose tar pack   '/home/lubianat/Documents/Projects/side/node-europepmc' ]
+12 verbose tarball /home/lubianat/.npm/node-europmc/0.0.1/package.tgz
+13 verbose folder /home/lubianat/Documents/Projects/side/node-europepmc
+14 verbose addLocalTarball adding from inside cache /home/lubianat/.npm/node-europmc/0.0.1/package.tgz
+15 silly cache afterAdd node-europmc@0.0.1
+16 verbose afterAdd /home/lubianat/.npm/node-europmc/0.0.1/package/package.json not in flight; writing
+17 verbose afterAdd /home/lubianat/.npm/node-europmc/0.0.1/package/package.json written
+18 silly publish { name: 'node-europmc',
+18 silly publish   version: '0.0.1',
+18 silly publish   description: 'A package to query the EuropePMC API. ',
+18 silly publish   main: 'index.js',
+18 silly publish   scripts: { test: 'echo "Error: no test specified" && exit 1' },
+18 silly publish   repository:
+18 silly publish    { type: 'git',
+18 silly publish      url: 'git+https://github.com/lubianat/node-europmc.git' },
+18 silly publish   keywords: [ 'EuropePMC', 'PubMed', 'papers' ],
+18 silly publish   author: { name: 'Tiago Lubiana' },
+18 silly publish   license: 'MIT',
+18 silly publish   bugs: { url: 'https://github.com/lubianat/node-europmc/issues' },
+18 silly publish   homepage: 'https://github.com/lubianat/node-europmc#readme',
+18 silly publish   dependencies:
+18 silly publish    { chalk: '2.4.2',
+18 silly publish      cheerio: '1.0.0-rc.3',
+18 silly publish      got: '9.6.0',
+18 silly publish      lodash: '4.17.15',
+18 silly publish      matched: '4.0.0',
+18 silly publish      mkdirp: '0.5.1',
+18 silly publish      progress: '2.0.3',
+18 silly publish      'random-number-generator': '^1.0.2',
+18 silly publish      'request-promise-native': '1.0.7',
+18 silly publish      requestretry: '4.0.0',
+18 silly publish      version_compare: '0.0.3',
+18 silly publish      winston: '3.2.1',
+18 silly publish      xml2js: '0.4.22' },
+18 silly publish   readme: '#node-europmc\n\nA nodejs wrapper for the europe PMC RESTful API.\nhttps://europepmc.org/RestfulWebService\n\nCode based in node-ncib (https://github.com/CAYdenberg/node-ncbi) and getpapers(https://github.com/ContentMine/getpapers)\n\n# Getting started\nvar pmc = require(\'node-europepmc\');\n\n# Basic use\n\n## Performing a search\n\nThe basic function queries the Europe PMC API using 4 parameters:\n\nquery : The search string of choice\nn_papers : the number of papers which info will be returned\nsorting_type : How the papers will be sorted. Default is "relevance", \nbut can be changed to "date" or "citation". \nmetadata : Amount of metadata required. Defaults to "lite" (essential metadata).\nThe other option is "full", which includes abstract, full text links, and MeSH terms.\n\n\nlet query = "dendritic cell"\n\n\npmc.search_papers(query, n_papers = 2, sorting_type = "citation").then((results) => {\n\n    console.log(results)\n\n\n})\n\n\nThis will log\n\n\n{ count: 230059,\n  papers: \n   [ { id: \'9521319\',\n       source: \'MED\',\n       pmid: \'9521319\',\n       doi: \'10.1038/32588\',\n       title: \'Dendritic cells and the control of immunity.\',\n       authorString: \'Banchereau J, Steinman RM.\',\n       journalTitle: \'Nature\',\n       issue: \'6673\',\n       journalVolume: \'392\',\n       pubYear: \'1998\',\n       journalIssn: \'0028-0836; 1476-4687; \',\n       pageInfo: \'245-252\',\n       pubType: \'research support, u.s. gov\\\'t, p.h.s.; review; journal article\',\n       isOpenAccess: \'N\',\n       inEPMC: \'N\',\n       inPMC: \'N\',\n       hasPDF: \'N\',\n       hasBook: \'N\',\n       citedByCount: 7201,\n       hasReferences: \'Y\',\n       hasTextMinedTerms: \'Y\',\n       hasDbCrossReferences: \'N\',\n       hasLabsLinks: \'Y\',\n       hasTMAccessionNumbers: \'N\',\n       firstIndexDate: \'2008-01-29\',\n       firstPublicationDate: \'1998-03-01\' },\n     { id: \'12490959\',\n       source: \'MED\',\n       pmid: \'12490959\',\n       pmcid: \'PMC2803035\',\n       doi: \'10.1038/nature01322\',\n       title: \'Inflammation and cancer.\',\n       authorString: \'Coussens LM, Werb Z.\',\n       journalTitle: \'Nature\',\n       issue: \'6917\',\n       journalVolume: \'420\',\n       pubYear: \'2002\',\n       journalIssn: \'0028-0836; 1476-4687; \',\n       pageInfo: \'860-867\',\n       pubType: \'research support, u.s. gov\\\'t, p.h.s.; research support, non-u.s. gov\\\'t; research-article; review; journal article\',\n       isOpenAccess: \'N\',\n       inEPMC: \'Y\',\n       inPMC: \'N\',\n       hasPDF: \'Y\',\n       hasBook: \'N\',\n       hasSuppl: \'N\',\n       citedByCount: 6011,\n       hasReferences: \'Y\',\n       hasTextMinedTerms: \'Y\',\n       hasDbCrossReferences: \'N\',\n       hasLabsLinks: \'Y\',\n       hasTMAccessionNumbers: \'N\',\n       firstIndexDate: \'2010-09-15\',\n       firstPublicationDate: \'2002-12-01\' } ] }\n\n\n       where count is the total number of papers.\n\n\n       To change the number of results retrieved at a time, just change the n_papers parameter\n\n\n       To get the abstract from the first paper, for example, you could do:\n        \npmc.search_papers(query, n_papers = 1, sorting_type = "citation", metadata = "full").then((results) => {\n\n  console.log(results.papers[0].abstractText)\n\n\n})',
+18 silly publish   readmeFilename: 'README.md',
+18 silly publish   gitHead: 'c05dcc9d838b675a4387ce05197e07825e9cba29',
+18 silly publish   _id: 'node-europmc@0.0.1',
+18 silly publish   _shasum: 'a5ba1caafa7dabdcaf816efdc733528a38242d96',
+18 silly publish   _from: '.' }
+19 verbose getPublishConfig undefined
+20 silly mapToRegistry name node-europmc
+21 silly mapToRegistry using default registry
+22 silly mapToRegistry registry https://registry.npmjs.org/
+23 silly mapToRegistry uri https://registry.npmjs.org/node-europmc
+24 verbose publish registryBase https://registry.npmjs.org/
+25 silly publish uploading /home/lubianat/.npm/node-europmc/0.0.1/package.tgz
+26 verbose request uri https://registry.npmjs.org/node-europmc
+27 verbose request sending authorization for write operation
+28 info attempt registry request try #1 at 14:51:18
+29 verbose request using bearer token for auth
+30 verbose request id edeb7c8d84860fab
+31 http request PUT https://registry.npmjs.org/node-europmc
+32 http 403 https://registry.npmjs.org/node-europmc
+33 verbose headers { date: 'Tue, 08 Oct 2019 17:51:18 GMT',
+33 verbose headers   'content-type': 'application/json',
+33 verbose headers   'transfer-encoding': 'chunked',
+33 verbose headers   connection: 'keep-alive',
+33 verbose headers   'set-cookie':
+33 verbose headers    [ '__cfduid=d9435647289c2c9a9934f694aeac448321570557078; expires=Wed, 07-Oct-20 17:51:18 GMT; path=/; domain=.npmjs.org; HttpOnly' ],
+33 verbose headers   'cf-cache-status': 'DYNAMIC',
+33 verbose headers   'cf-ray': '5229f64aec78d004-GRU',
+33 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+33 verbose headers   vary: 'Accept-Encoding',
+33 verbose headers   server: 'cloudflare',
+33 verbose headers   'content-encoding': 'gzip' }
+34 verbose request invalidating /home/lubianat/.npm/registry.npmjs.org/node-europmc on PUT
+35 error publish Failed PUT 403
+36 verbose stack Error: You cannot publish over the previously published versions: 0.0.1. : node-europmc
+36 verbose stack     at makeError (/usr/share/npm/node_modules/npm-registry-client/lib/request.js:264:12)
+36 verbose stack     at CachingRegistryClient.<anonymous> (/usr/share/npm/node_modules/npm-registry-client/lib/request.js:252:14)
+36 verbose stack     at /usr/share/npm/node_modules/npm-registry-client/lib/request.js:178:7
+36 verbose stack     at Gunzip.onEnd (zlib.js:131:5)
+36 verbose stack     at emitNone (events.js:111:20)
+36 verbose stack     at Gunzip.emit (events.js:208:7)
+36 verbose stack     at endReadableNT (_stream_readable.js:1064:12)
+36 verbose stack     at _combinedTickCallback (internal/process/next_tick.js:138:11)
+36 verbose stack     at process._tickCallback (internal/process/next_tick.js:180:9)
+37 verbose statusCode 403
+38 verbose pkgid node-europmc
+39 verbose cwd /home/lubianat/Documents/Projects/side/node-europepmc
+40 error Linux 4.15.0-29-generic
+41 error argv "/usr/bin/node" "/usr/bin/npm" "publish"
+42 error node v8.10.0
+43 error npm  v3.5.2
+44 error code E403
+45 error You cannot publish over the previously published versions: 0.0.1. : node-europmc
+46 error If you need help, you may report this error at:
+46 error     <https://github.com/npm/npm/issues>
+47 verbose exit [ 1, true ]
