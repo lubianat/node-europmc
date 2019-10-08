@@ -4,16 +4,15 @@ var got = require('got')
 var mkdirp = require('mkdirp')
 var _ = require('lodash')
 var ProgressBar = require('progress')
-var urlDl = require('./download.js')
 var requestretry = require('requestretry')
 var glob = require('matched')
 var vc = require('version_compare')
-var config = require('./config.js')
 var log = require('winston')
 
 var parseString = require('xml2js').parseString
 
 var EuPMCVersion = '5.3.2'
+console.log(EuPMCVersion)
 
 var EuPmc = function (opts) {
   var eupmc = this
@@ -29,6 +28,8 @@ var EuPmc = function (opts) {
   eupmc.pagesize = '1000'
   eupmc.unfillledPage = false
 }
+
+
 
 EuPmc.prototype.search = function (query) {
   var eupmc = this
