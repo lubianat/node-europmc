@@ -1,4 +1,4 @@
-re{
+{
   "name": "node-europmc",
   "version": "0.0.2",
   "description": "A package to query the EuropePMC API. ",
