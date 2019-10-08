@@ -111,6 +111,8 @@ pmc.search_papers(query, n_papers = 1, sorting_type = "citation").then((results)
 })
 ```
 
+## Getting abstracts
+
 To get the abstract from the first paper, for example, you could do:
         
 ```javascript
@@ -127,12 +129,12 @@ It will log:
 ```
 B and T lymphocytes are the mediators of immunity, but their function is under 
 the control of dendritic cells. Dendritic cells in the periphery capture and
- process antigens, express lymphocyte co-stimulatory molecules, migrate to 
- lymphoid organs and secrete cytokines to initiate immune responses. They not 
- only activate lymphocytes, they also tolerize T cells to antigens that are 
- innate to the body (self-antigens), thereby minimizing autoimmune reactions. 
- Once a neglected cell type, dendritic cells can now be readily obtained in 
- sufficient quantities to allow molecular and cell biological analysis. With 
- knowledge comes the realization that these cells are a powerful tool for 
- manipulating the immune system.
+process antigens, express lymphocyte co-stimulatory molecules, migrate to 
+lymphoid organs and secrete cytokines to initiate immune responses. They not 
+only activate lymphocytes, they also tolerize T cells to antigens that are 
+innate to the body (self-antigens), thereby minimizing autoimmune reactions. 
+Once a neglected cell type, dendritic cells can now be readily obtained in 
+sufficient quantities to allow molecular and cell biological analysis. With 
+knowledge comes the realization that these cells are a powerful tool for 
+manipulating the immune system.
 ```
