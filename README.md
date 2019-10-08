@@ -10,6 +10,7 @@ Code based in node-ncib (https://github.com/CAYdenberg/node-ncbi) and getpapers(
 npm install --save node-europepmc`
 `
 
+And on your node code:
 
 ```js
 var pmc = require('node-europepmc');
