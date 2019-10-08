@@ -6,7 +6,14 @@ https://europepmc.org/RestfulWebService
 Code based in node-ncib (https://github.com/CAYdenberg/node-ncbi) and getpapers(https://github.com/ContentMine/getpapers)
 
 # Getting started
+`
+npm install --save node-europepmc`
+`
+
+
+```js
 var pmc = require('node-europepmc');
+```
 
 # Basic use
 
@@ -21,7 +28,7 @@ but can be changed to "date" or "citation".
 metadata : Amount of metadata required. Defaults to "lite" (essential metadata).
 The other option is "full", which includes abstract, full text links, and MeSH terms.
 
-
+```js
 let query = "dendritic cell"
 
 
@@ -31,11 +38,11 @@ pmc.search_papers(query, n_papers = 2, sorting_type = "citation").then((results)
 
 
 })
-
+```
 
 This will log
 
-
+```
 { count: 230059,
   papers: 
    [ { id: '9521319',
@@ -92,19 +99,31 @@ This will log
        hasTMAccessionNumbers: 'N',
        firstIndexDate: '2010-09-15',
        firstPublicationDate: '2002-12-01' } ] }
+```
+
+where count is the total number of papers.
 
 
-       where count is the total number of papers.
+To change the number of results retrieved at a time, just change the n_papers parameter
+```javascript
+pmc.search_papers(query, n_papers = 1, sorting_type = "citation").then((results) => {
+  console.log(results.papers[0].abstractText)
+})
+```
 
-
-       To change the number of results retrieved at a time, just change the n_papers parameter
-
-
-       To get the abstract from the first paper, for example, you could do:
+To get the abstract from the first paper, for example, you could do:
         
+```javascript
 pmc.search_papers(query, n_papers = 1, sorting_type = "citation", metadata = "full").then((results) => {
 
   console.log(results.papers[0].abstractText)
 
 
 })
+```
+
+It will log:
+
+```
+B and T lymphocytes are the mediators of immunity, but their function is under the control of dendritic cells. Dendritic cells in the periphery capture and process antigens, express lymphocyte co-stimulatory molecules, migrate to lymphoid organs and secrete cytokines to initiate immune responses. They not only activate lymphocytes, they also tolerize T cells to antigens that are innate to the body (self-antigens), thereby minimizing autoimmune reactions. Once a neglected cell type, dendritic cells can now be readily obtained in sufficient quantities to allow molecular and cell biological analysis. With knowledge comes the realization that these cells are a powerful tool for manipulating the immune system.
+```
