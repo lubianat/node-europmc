@@ -25,7 +25,7 @@
     "chalk": "2.4.2",
     "cheerio": "1.0.0-rc.3",
     "got": "9.6.0",
-    "lodash": "4.17.15",
+    "lodash": "4.17.19",
     "matched": "4.0.0",
     "mkdirp": "0.5.1",
     "progress": "2.0.3",
